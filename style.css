@@ -123,14 +123,14 @@ select {
     animation: spin 0.1s linear infinite;
 }
 
-/* Nuevas reglas para el mensaje de Game Over */
+
 #game-over-message-final {
     text-align: center;
 }
 
 #game-over-message-final p {
-    font-size: 3em; /* Tamaño de fuente más grande */
-    color: #ff4d4d; /* Color rojo */
+    font-size: 3em; 
+    color: #ff4d4d; 
     font-weight: bold;
     margin-bottom: 10px;
 }
