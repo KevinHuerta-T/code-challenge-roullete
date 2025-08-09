@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Roulette Game</h1>
+
+    <div class="container">
+        <div id="setup-section" class="game-section">
+            <label for="bankroll-input">Enter your initial bankroll 💲:</label>
+            <input type="number" id="bankroll-input" min="1" value="100">
+            <button onclick="startGame()"> ✅🤑 Start Game 🤑✅</button>
+        </div>
+
+        <div id="game-section" class="game-section" style="display: none;">
+            <p>Current Bankroll: $<span id="current-bankroll"></span></p>
+
+            <div class="bet-container">
+                <h3>Place Your Bet</h3>
+                <label for="bet-type">Bet Type:</label>
+                <select id="bet-type" onchange="updateBetOptions()">
+                    <option value="red_black">Red 🟥 | Black ⬛</option>
+                    <option value="dozen">Dozen (1️⃣—1️⃣2️⃣ | 1️⃣3️⃣—2️⃣4️⃣ | 2️⃣5️⃣—3️⃣6️⃣)</option>
+                    <option value="single">Specific Number 🔢</option>
+                    <option value="high_low">High ⬆️ | Low ⬇️ (1️⃣—1️⃣8️⃣ |1️⃣9️⃣—3️⃣6️⃣)</option>
+                </select>
+
+                <div id="bet-options-container">
+                    </div>
+
+                <label for="wager-amount">Wager Amount: 💲</label>
+                <input type="number" id="wager-amount" min="1" value="10">
+
+                <button id="place-bet-button" onclick="placeBet()">Place Bet 🤑</button>
+            </div>
+
+            <button id="spin-wheel-button" onclick="spinWheel()" disabled>Spin Wheel 🔄</button>
+            <button onclick="quitGame()"> 🆘 Quit Game 🆘</button>
+        </div>
+
+        <div id="results-section" class="game-section">
+            <div id="roulette-display"></div>
+            <p id="results-text"></p>
+            <div id="game-over-message" style="display: none;">
+                <p>You are out of money. Game over!</p>
+                <div id="game-over-emoji">😞</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
